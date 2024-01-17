@@ -39,23 +39,23 @@ services:
  #   volumes:
  #     - ./nodered/data:/data
 
-  # node-red:
-  #   container_name: iot-project-node-red
-  #   build:
-  #     context: ./nodered/
-  #     dockerfile: Dockerfile
-  #   image: nodered:latest
-  #   environment:
-  #     - TZ=Europe/Amsterdam
-  #     # - MYSQLUSERNAME=root
-  #     # - MYSQLPASSWORD=example
-  #   ports:
-  #     - "1880:1880"
-  #   networks:
-  #     iot-project-network:
-  #       ipv4_address: 172.30.0.100
-  #   volumes:
-  #     - ./nodered/data:/data
+  node-red:
+    container_name: iot-project-node-red
+    build:
+      context: ./nodered/
+      dockerfile: Dockerfile
+    image: nodered:latest
+    environment:
+      - TZ=Europe/Amsterdam
+      # - MYSQLUSERNAME=root
+      # - MYSQLPASSWORD=example
+    ports:
+      - "1880:1880"
+    networks:
+      iot-project-network:
+        ipv4_address: 172.30.0.100
+    volumes:
+      - ./nodered/data:/data
 
   mosquitto:
     container_name: iot-project-mosquitto

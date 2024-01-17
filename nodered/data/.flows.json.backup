@@ -1,6 +1,6 @@
 [
     {
-        "id": "9e5230c8d38af4ce",
+        "id": "4db9e93a234f8a01",
         "type": "tab",
         "label": "Flow 2",
         "disabled": false,
@@ -11,7 +11,7 @@
         "id": "a928ba0.2d1f748",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "host.docker.internal",
+        "broker": "172.30.0.101",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -153,280 +153,118 @@
         }
     },
     {
-        "id": "7b6c645b.5efc9c",
-        "type": "MySQLdatabase",
+        "id": "cd6116aa8b23d0c6",
+        "type": "mqtt-broker",
         "name": "",
-        "host": "host.docker.internal",
-        "port": "3306",
-        "db": "NODERED",
-        "tz": "",
-        "charset": ""
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
     },
     {
-        "id": "ab3060f4c7e96482",
-        "type": "coap-server",
-        "name": "Hello CoAP Server",
-        "port": "5683",
-        "ipv6": false
+        "id": "575f0b6b213a240c",
+        "type": "ui_group",
+        "name": "",
+        "tab": "6043b1181f466e6d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
     },
     {
-        "id": "9a9785a72c57e268",
+        "id": "55277096f27f8c4f",
+        "type": "ui_group",
+        "name": "",
+        "tab": "6043b1181f466e6d",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "21547421409c6c66",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6043b1181f466e6d",
+        "type": "ui_tab",
+        "name": "ENERGY MONITORING",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "54bd2a451844028d",
         "type": "mqtt in",
-        "z": "9e5230c8d38af4ce",
+        "z": "4db9e93a234f8a01",
         "name": "",
-        "topic": "/sensors/1",
+        "topic": "/Thinkitive/v1",
         "qos": "2",
         "datatype": "auto-detect",
-        "broker": "a928ba0.2d1f748",
+        "broker": "cd6116aa8b23d0c6",
         "nl": false,
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 300,
-        "y": 240,
+        "x": 250,
+        "y": 60,
         "wires": [
             [
-                "3a9dbe1931492665",
-                "2a72916604cb64d9"
+                "093bb892abdb67ab",
+                "f7e79fe435f12d7d",
+                "00e48b4792b8898f"
             ]
         ]
     },
     {
-        "id": "dc0abbe4e10e6aba",
-        "type": "function",
-        "z": "9e5230c8d38af4ce",
-        "name": "SELECT ALL FROM NODERED",
-        "func": "msg.topic = \"SELECT * FROM Temperature\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 480,
-        "wires": [
-            [
-                "9a6a9a26b8cf4294"
-            ]
-        ]
-    },
-    {
-        "id": "57555daab2aa643b",
+        "id": "093bb892abdb67ab",
         "type": "debug",
-        "z": "9e5230c8d38af4ce",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 940,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "0df1f1dc738000d7",
-        "type": "inject",
-        "z": "9e5230c8d38af4ce",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 480,
-        "wires": [
-            [
-                "dc0abbe4e10e6aba"
-            ]
-        ]
-    },
-    {
-        "id": "d9cc89151f219347",
-        "type": "function",
-        "z": "9e5230c8d38af4ce",
-        "name": "TEST INSERT",
-        "func": "msg.topic = \"INSERT INTO Temperature(value, sensor) VALUES(2, 'Sensor 2')\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 80,
-        "wires": [
-            [
-                "da10cb5451a8def6"
-            ]
-        ]
-    },
-    {
-        "id": "158e900637ee6ee7",
-        "type": "inject",
-        "z": "9e5230c8d38af4ce",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 320,
-        "y": 80,
-        "wires": [
-            [
-                "d9cc89151f219347"
-            ]
-        ]
-    },
-    {
-        "id": "3a9dbe1931492665",
-        "type": "function",
-        "z": "9e5230c8d38af4ce",
-        "name": "INSERT MQTT SENSOR 1",
-        "func": "flow.set('mqtt_sensor1value', msg.payload);\nmsg.topic = \"INSERT INTO Temperature(value, sensor) VALUES(\" + flow.get('mqtt_sensor1value') +\",'MQTT Sensor 1')\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 620,
-        "y": 240,
-        "wires": [
-            [
-                "bcdeaea1a0219d0c"
-            ]
-        ]
-    },
-    {
-        "id": "dea03a7e90c6b6c1",
-        "type": "function",
-        "z": "9e5230c8d38af4ce",
-        "name": "INSERT COAP SENSOR 1",
-        "func": "flow.set('coap_sensor1value', msg.payload);\nmsg.topic = \"INSERT INTO Temperature(value, sensor) VALUES(\" + flow.get('coap_sensor1value') +\",'COAP Sensor 1')\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 740,
-        "y": 340,
-        "wires": [
-            [
-                "dda09a158cd6f00f",
-                "673dac94e734f072"
-            ]
-        ]
-    },
-    {
-        "id": "e18a06eb76f906e6",
-        "type": "inject",
-        "z": "9e5230c8d38af4ce",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 190,
-        "y": 340,
-        "wires": [
-            [
-                "297096a4d3dc7a8b"
-            ]
-        ]
-    },
-    {
-        "id": "35e19e583ea186b2",
-        "type": "inject",
-        "z": "9e5230c8d38af4ce",
-        "name": "",
-        "props": [],
-        "repeat": "120",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 600,
-        "wires": [
-            [
-                "22f8cd071aa96f78",
-                "70313c387b3c0495"
-            ]
-        ]
-    },
-    {
-        "id": "22f8cd071aa96f78",
-        "type": "function",
-        "z": "9e5230c8d38af4ce",
-        "name": "GET LAST MQTT 1 VALUE",
-        "func": "msg.topic = \"select value FROM Temperature WHERE sensor = 'MQTT Sensor 1' ORDER BY id  DESC limit 1\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 540,
-        "wires": [
-            [
-                "f94823e21177f714"
-            ]
-        ]
-    },
-    {
-        "id": "70313c387b3c0495",
-        "type": "function",
-        "z": "9e5230c8d38af4ce",
-        "name": "GET LAST COAP 1 VALUE",
-        "func": "msg.topic = \"select value FROM Temperature WHERE sensor = 'COAP Sensor 1' ORDER BY id  DESC limit 1\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 660,
-        "wires": [
-            [
-                "5abab02b6ca26f1c"
-            ]
-        ]
-    },
-    {
-        "id": "0c492f8dfe1f782a",
-        "type": "debug",
-        "z": "9e5230c8d38af4ce",
-        "name": "debug 2",
-        "active": true,
+        "z": "4db9e93a234f8a01",
+        "name": "debug 26",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -434,118 +272,225 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1120,
-        "y": 600,
+        "x": 560,
+        "y": 20,
         "wires": []
     },
     {
-        "id": "2e296c7e8c6b4a56",
-        "type": "debug",
-        "z": "9e5230c8d38af4ce",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1100,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "7e36a306bfd45c0c",
-        "type": "change",
-        "z": "9e5230c8d38af4ce",
-        "name": "move 1st row into payload",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[0].value",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 890,
-        "y": 600,
+        "id": "88f0ed3698b1edbc",
+        "type": "mqtt in",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/Thinkitive/i1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cd6116aa8b23d0c6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 180,
         "wires": [
             [
-                "0c492f8dfe1f782a",
-                "e1985f77fa07ccc9"
+                "ea853756785edabf",
+                "060b2c217808be1a",
+                "c0690acb69a59371"
             ]
         ]
     },
     {
-        "id": "b6e93f4863224f1e",
-        "type": "change",
-        "z": "9e5230c8d38af4ce",
-        "name": "move 1st row into payload",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[0].value",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 870,
+        "id": "571bdf8abababca2",
+        "type": "mqtt in",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/Thinkitive/kwh1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cd6116aa8b23d0c6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 260,
+        "wires": [
+            [
+                "52cb2a836c3adf1c",
+                "af39cc7a26d1cbba",
+                "121395698112140a"
+            ]
+        ]
+    },
+    {
+        "id": "7b97c339a4ceaeae",
+        "type": "mqtt in",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/Thinkitive/kw1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a928ba0.2d1f748",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 440,
+        "wires": [
+            [
+                "43c095561101804f",
+                "d4ee0270d575b41e",
+                "05d810412b0d1f91"
+            ]
+        ]
+    },
+    {
+        "id": "1297227d9452ef61",
+        "type": "mqtt in",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/Thinkitive/hz1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a928ba0.2d1f748",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 600,
+        "wires": [
+            [
+                "509a664b6b376ae4",
+                "23dbcdaf13b9a410",
+                "310a91a9b5871353"
+            ]
+        ]
+    },
+    {
+        "id": "168d820b8a9fdc95",
+        "type": "mqtt in",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/Thinkitive/pF1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a928ba0.2d1f748",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
         "y": 760,
         "wires": [
             [
-                "2e296c7e8c6b4a56",
-                "09683db1e79e9108"
+                "6667847b3462104a",
+                "13a1e05b51413137",
+                "44f8e5b4de6c0aa5"
             ]
         ]
     },
     {
-        "id": "297096a4d3dc7a8b",
-        "type": "coap request",
-        "z": "9e5230c8d38af4ce",
-        "method": "GET",
-        "confirmable": false,
-        "observe": false,
-        "multicast": false,
-        "multicastTimeout": 20000,
-        "url": "coap://172.30.0.102:5683/temperature",
-        "content-format": "text/plain",
-        "raw-buffer": false,
-        "name": "temperature",
-        "x": 390,
-        "y": 340,
-        "wires": [
-            [
-                "dea03a7e90c6b6c1"
-            ]
-        ]
+        "id": "ea853756785edabf",
+        "type": "debug",
+        "z": "4db9e93a234f8a01",
+        "name": "debug 27",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 140,
+        "wires": []
     },
     {
-        "id": "e1985f77fa07ccc9",
+        "id": "52cb2a836c3adf1c",
+        "type": "debug",
+        "z": "4db9e93a234f8a01",
+        "name": "debug 28",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "43c095561101804f",
+        "type": "debug",
+        "z": "4db9e93a234f8a01",
+        "name": "debug 29",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "509a664b6b376ae4",
+        "type": "debug",
+        "z": "4db9e93a234f8a01",
+        "name": "debug 30",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "6667847b3462104a",
+        "type": "debug",
+        "z": "4db9e93a234f8a01",
+        "name": "debug 31",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "f7e79fe435f12d7d",
         "type": "ui_gauge",
-        "z": "9e5230c8d38af4ce",
+        "z": "4db9e93a234f8a01",
         "name": "",
-        "group": "40213cc014bd0905",
-        "order": 0,
+        "group": "575f0b6b213a240c",
+        "order": 8,
         "width": 0,
         "height": 0,
         "gtype": "gage",
-        "title": "MQTT 1",
+        "title": "VOLTAGES",
         "label": "units",
         "format": "{{value}}",
         "min": 0,
-        "max": "40",
+        "max": "420",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -553,26 +498,55 @@
         ],
         "seg1": "",
         "seg2": "",
+        "diff": false,
         "className": "",
-        "x": 1140,
-        "y": 540,
+        "x": 570,
+        "y": 60,
         "wires": []
     },
     {
-        "id": "09683db1e79e9108",
+        "id": "060b2c217808be1a",
         "type": "ui_gauge",
-        "z": "9e5230c8d38af4ce",
+        "z": "4db9e93a234f8a01",
         "name": "",
-        "group": "40213cc014bd0905",
+        "group": "575f0b6b213a240c",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CURRENT",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "af39cc7a26d1cbba",
+        "type": "ui_gauge",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "group": "55277096f27f8c4f",
         "order": 1,
         "width": 0,
         "height": 0,
         "gtype": "gage",
-        "title": "COAP 1",
+        "title": "ENERGY",
         "label": "units",
         "format": "{{value}}",
         "min": 0,
-        "max": "40",
+        "max": "10000",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -580,120 +554,249 @@
         ],
         "seg1": "",
         "seg2": "",
+        "diff": false,
         "className": "",
-        "x": 1100,
-        "y": 660,
+        "x": 520,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "da10cb5451a8def6",
-        "type": "mysql",
-        "z": "9e5230c8d38af4ce",
-        "mydb": "7b6c645b.5efc9c",
+        "id": "d4ee0270d575b41e",
+        "type": "ui_gauge",
+        "z": "4db9e93a234f8a01",
         "name": "",
-        "x": 870,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9a6a9a26b8cf4294",
-        "type": "mysql",
-        "z": "9e5230c8d38af4ce",
-        "mydb": "7b6c645b.5efc9c",
-        "name": "",
-        "x": 750,
+        "group": "575f0b6b213a240c",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "RUNNING LOAD",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 530,
         "y": 480,
-        "wires": [
-            [
-                "57555daab2aa643b"
-            ]
-        ]
-    },
-    {
-        "id": "bcdeaea1a0219d0c",
-        "type": "mysql",
-        "z": "9e5230c8d38af4ce",
-        "mydb": "7b6c645b.5efc9c",
-        "name": "",
-        "x": 870,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "673dac94e734f072",
-        "type": "mysql",
-        "z": "9e5230c8d38af4ce",
-        "mydb": "7b6c645b.5efc9c",
-        "name": "",
-        "x": 1050,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f94823e21177f714",
-        "type": "mysql",
-        "z": "9e5230c8d38af4ce",
-        "mydb": "7b6c645b.5efc9c",
-        "name": "",
-        "x": 710,
-        "y": 540,
-        "wires": [
-            [
-                "7e36a306bfd45c0c"
-            ]
-        ]
-    },
-    {
-        "id": "5abab02b6ca26f1c",
-        "type": "mysql",
-        "z": "9e5230c8d38af4ce",
-        "mydb": "7b6c645b.5efc9c",
-        "name": "",
-        "x": 710,
-        "y": 660,
-        "wires": [
-            [
-                "b6e93f4863224f1e"
-            ]
-        ]
-    },
-    {
-        "id": "dda09a158cd6f00f",
-        "type": "debug",
-        "z": "9e5230c8d38af4ce",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1040,
-        "y": 280,
         "wires": []
     },
     {
-        "id": "2a72916604cb64d9",
-        "type": "debug",
-        "z": "9e5230c8d38af4ce",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 440,
-        "y": 160,
+        "id": "23dbcdaf13b9a410",
+        "type": "ui_gauge",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "group": "55277096f27f8c4f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "FREQUENCY",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#2cec13"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 480,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "13a1e05b51413137",
+        "type": "ui_gauge",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "group": "55277096f27f8c4f",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "POWER FACTOR",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#52e901"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 490,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c70b0b477c7296c9",
+        "type": "inject",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "6",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "89",
+        "payloadType": "num",
+        "x": 210,
+        "y": 940,
+        "wires": [
+            [
+                "479255cacf4380be"
+            ]
+        ]
+    },
+    {
+        "id": "479255cacf4380be",
+        "type": "mqtt out",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "data/test",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21547421409c6c66",
+        "x": 520,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "00e48b4792b8898f",
+        "type": "mqtt out",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/volts",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21547421409c6c66",
+        "x": 570,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c0690acb69a59371",
+        "type": "mqtt out",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/current",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21547421409c6c66",
+        "x": 540,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "121395698112140a",
+        "type": "mqtt out",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/energy",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21547421409c6c66",
+        "x": 540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "05d810412b0d1f91",
+        "type": "mqtt out",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/load",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21547421409c6c66",
+        "x": 490,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "310a91a9b5871353",
+        "type": "mqtt out",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/frequency",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21547421409c6c66",
+        "x": 470,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "44f8e5b4de6c0aa5",
+        "type": "mqtt out",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "topic": "/powerfactor",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "21547421409c6c66",
+        "x": 470,
+        "y": 840,
         "wires": []
     }
 ]
