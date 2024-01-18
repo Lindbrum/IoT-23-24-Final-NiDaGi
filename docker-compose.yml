@@ -73,6 +73,8 @@ services:
   influxdb:
     container_name: iot-project-influxdb
     image: influxdb:2.7.4
+    volumes:
+    - $PWD/influxdb/data:/var/lib/influxdb2:rw
     ports:
        - 8086:8086
     networks:
@@ -83,10 +85,15 @@ services:
     restart: always
     container_name: iot-project-telegraf
     image: telegraf:latest
+    environment:
+      - INFLUX_TOKEN=1uZaT8qv_xDlVPF-ZNQ25q9T0LkmdKgx4tLuqKtXgfYzn8Q4g_F1aKQ1MJQSY-awroob0P7apiu7lo4a86BXDQ==
     volumes:
-      - ./telegraf/mqtt_client.conf:/etc/telegraf/mqtt_client.conf:rw
+      - $PWD/telegraf/mqtt_client.conf:/etc/telegraf/telegraf.conf:ro
     depends_on:
       - influxdb
+    networks:
+      iot-project-network:
+        ipv4_address: 172.30.0.104
 
   # grafana:
   #   # Grafana config here (to be added later)
