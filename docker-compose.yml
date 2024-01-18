@@ -79,6 +79,15 @@ services:
        iot-project-network:
          ipv4_address: 172.30.0.103
 
+  telegraf:
+    restart: always
+    container_name: iot-project-telegraf
+    image: telegraf:latest
+    volumes:
+      - ./telegraf/mqtt_client.conf:/etc/telegraf/mqtt_client.conf:rw
+    depends_on:
+      - influxdb
+
   # grafana:
   #   # Grafana config here (to be added later)
 
