@@ -26,19 +26,6 @@ services:
 #    networks:
 #      - se4iot-net
 
-#node-red:
-#    image: nodered/node-red:latest
- #   container_name: se4iot-node-red
- #   environment:
- #     - TZ=Europe/Amsterdam
- #   ports:
- #     - "1880:1880"
- #   networks:
- #     se4iot-network:
- #       ipv4_address: 172.30.0.100
- #   volumes:
- #     - ./nodered/data:/data
-
   node-red:
     container_name: iot-project-node-red
     build:
@@ -83,14 +70,14 @@ services:
   #   ports:
   #     - "5683:5683"
 
-  # influxdb:
-  #   container_name: iot-project-influxdb
-  #   image: influxdb:2.7.4
-  #   ports:
-  #     - 8086:8086
-  #   networks:
-  #     iot-project-network:
-  #       ipv4_address: 172.30.0.103
+  influxdb:
+    container_name: iot-project-influxdb
+    image: influxdb:2.7.4
+    ports:
+       - 8086:8086
+    networks:
+       iot-project-network:
+         ipv4_address: 172.30.0.103
 
   # grafana:
   #   # Grafana config here (to be added later)
