@@ -73,11 +73,36 @@ services:
   influxdb:
     container_name: iot-project-influxdb
     image: influxdb:2.7.4
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=adminadmin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=adminadmin
+      - DOCKER_INFLUXDB_INIT_ORG=Iot-23-24
+      - DOCKER_INFLUXDB_INIT_BUCKET=Iot-project
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=ardtyGcZCP_F5qJ7TG9keM6Y0rVkSS9fYNy_AJN-Wk8IQydqA6E-HieWoKm5pCZ9RKB93mK2wOLtMyRsp9vVXQ==
+    volumes:
+    - $PWD/influxdb/data:/var/lib/influxdb2:rw
     ports:
        - 8086:8086
     networks:
        iot-project-network:
          ipv4_address: 172.30.0.103
+
+  telegraf:
+    restart: always
+    container_name: iot-project-telegraf
+    image: telegraf:latest
+    environment:
+      #All-access token
+      #- INFLUX_TOKEN=SOdZXSWMAa-BaWgNOqBSA130L_vjiBDy2jlCUzvqTQoZRUZE40hHOvizifo2xpCQCHty7MdHE_8UJQh2MBJcOQ==
+      - INFLUX_TOKEN=GhJNShLep5FOz6ft4oltz9hX1MWs90cEazCCPut_Nt65Zwapm08ODZBFcRUR2CsXsWQvZ5Ts8iQ4CSS-cWrnUA==
+    volumes:
+      - $PWD/telegraf/mqtt_client.conf:/etc/telegraf/telegraf.conf:ro
+    depends_on:
+      - influxdb
+    networks:
+      iot-project-network:
+        ipv4_address: 172.30.0.104
 
   # grafana:
   #   # Grafana config here (to be added later)
