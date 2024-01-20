@@ -74,6 +74,7 @@ services:
     container_name: iot-project-influxdb
     image: influxdb:2.7.4
     environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
       - DOCKER_INFLUXDB_INIT_USERNAME=adminadmin
       - DOCKER_INFLUXDB_INIT_PASSWORD=adminadmin
       - DOCKER_INFLUXDB_INIT_ORG=Iot-23-24
@@ -92,7 +93,9 @@ services:
     container_name: iot-project-telegraf
     image: telegraf:latest
     environment:
-      - INFLUX_TOKEN=1uZaT8qv_xDlVPF-ZNQ25q9T0LkmdKgx4tLuqKtXgfYzn8Q4g_F1aKQ1MJQSY-awroob0P7apiu7lo4a86BXDQ==
+      #All-access token
+      #- INFLUX_TOKEN=SOdZXSWMAa-BaWgNOqBSA130L_vjiBDy2jlCUzvqTQoZRUZE40hHOvizifo2xpCQCHty7MdHE_8UJQh2MBJcOQ==
+      - INFLUX_TOKEN=GhJNShLep5FOz6ft4oltz9hX1MWs90cEazCCPut_Nt65Zwapm08ODZBFcRUR2CsXsWQvZ5Ts8iQ4CSS-cWrnUA==
     volumes:
       - $PWD/telegraf/mqtt_client.conf:/etc/telegraf/telegraf.conf:ro
     depends_on:
