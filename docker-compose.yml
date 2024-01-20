@@ -104,8 +104,19 @@ services:
       iot-project-network:
         ipv4_address: 172.30.0.104
 
-  # grafana:
-  #   # Grafana config here (to be added later)
+  grafana:
+    restart: always
+    image: grafana/grafana-oss:latest
+    container_name: iot-project-grafana
+    volumes:
+      - $PWD/grafana/data:/var/lib/grafana:rw
+    depends_on:
+      - influxdb
+    ports:
+      - 3000:3000
+    networks:
+      iot-project-network:
+        ipv4_address: 172.30.0.105
 
 networks:
   iot-project-network:
