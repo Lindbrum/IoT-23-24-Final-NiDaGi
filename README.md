@@ -7,7 +7,7 @@ This project is designed to monitor and analyze electricity usage using a combin
 ## System Dashboard
 
 <p align="center">
-  <img src="images/dashboard.png" alt="demo" width="75%"/>
+  <img src="images/dashboard.PNG" alt="demo" width="75%"/>
 </p>
 
 ### Overview
