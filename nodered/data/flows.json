@@ -45,17 +45,6 @@
         "hidden": false
     },
     {
-        "id": "40213cc014bd0905",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "0648859e6711c8f9",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "ae2aceeadfb4b296",
         "type": "ui_base",
         "theme": {
@@ -202,39 +191,27 @@
         "className": ""
     },
     {
-        "id": "21547421409c6c66",
-        "type": "mqtt-broker",
-        "name": "",
-        "broker": "localhost",
-        "port": "1883",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
         "id": "6043b1181f466e6d",
         "type": "ui_tab",
         "name": "ENERGY MONITORING",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "6ddbd751be509e35",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "InfluxDB",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://172.30.0.103:8086",
+        "timeout": "10",
+        "rejectUnauthorized": true
     },
     {
         "id": "54bd2a451844028d",
@@ -264,7 +241,7 @@
         "type": "debug",
         "z": "4db9e93a234f8a01",
         "name": "debug 26",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -272,9 +249,10 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 455,
         "y": 20,
-        "wires": []
+        "wires": [],
+        "l": false
     },
     {
         "id": "88f0ed3698b1edbc",
@@ -290,7 +268,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 250,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "ea853756785edabf",
@@ -313,7 +291,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 260,
-        "y": 260,
+        "y": 340,
         "wires": [
             [
                 "52cb2a836c3adf1c",
@@ -335,8 +313,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 240,
-        "y": 440,
+        "x": 260,
+        "y": 480,
         "wires": [
             [
                 "43c095561101804f",
@@ -359,7 +337,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 250,
-        "y": 600,
+        "y": 620,
         "wires": [
             [
                 "509a664b6b376ae4",
@@ -382,7 +360,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 260,
-        "y": 760,
+        "y": 720,
         "wires": [
             [
                 "6667847b3462104a",
@@ -396,7 +374,7 @@
         "type": "debug",
         "z": "4db9e93a234f8a01",
         "name": "debug 27",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -404,16 +382,17 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 140,
-        "wires": []
+        "x": 455,
+        "y": 160,
+        "wires": [],
+        "l": false
     },
     {
         "id": "52cb2a836c3adf1c",
         "type": "debug",
         "z": "4db9e93a234f8a01",
         "name": "debug 28",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -421,16 +400,17 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 260,
-        "wires": []
+        "x": 455,
+        "y": 300,
+        "wires": [],
+        "l": false
     },
     {
         "id": "43c095561101804f",
         "type": "debug",
         "z": "4db9e93a234f8a01",
         "name": "debug 29",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -438,16 +418,17 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
+        "x": 455,
         "y": 440,
-        "wires": []
+        "wires": [],
+        "l": false
     },
     {
         "id": "509a664b6b376ae4",
         "type": "debug",
         "z": "4db9e93a234f8a01",
         "name": "debug 30",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -455,16 +436,17 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 600,
-        "wires": []
+        "x": 455,
+        "y": 580,
+        "wires": [],
+        "l": false
     },
     {
         "id": "6667847b3462104a",
         "type": "debug",
         "z": "4db9e93a234f8a01",
         "name": "debug 31",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -472,9 +454,10 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 760,
-        "wires": []
+        "x": 455,
+        "y": 720,
+        "wires": [],
+        "l": false
     },
     {
         "id": "f7e79fe435f12d7d",
@@ -500,7 +483,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 570,
+        "x": 510,
         "y": 60,
         "wires": []
     },
@@ -528,8 +511,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 550,
-        "y": 180,
+        "x": 510,
+        "y": 200,
         "wires": []
     },
     {
@@ -556,8 +539,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 520,
-        "y": 300,
+        "x": 500,
+        "y": 340,
         "wires": []
     },
     {
@@ -612,8 +595,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 480,
-        "y": 640,
+        "x": 520,
+        "y": 620,
         "wires": []
     },
     {
@@ -640,15 +623,15 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 490,
-        "y": 800,
+        "x": 530,
+        "y": 760,
         "wires": []
     },
     {
         "id": "c70b0b477c7296c9",
         "type": "inject",
         "z": "4db9e93a234f8a01",
-        "name": "",
+        "name": "Test email data",
         "props": [
             {
                 "p": "payload"
@@ -658,18 +641,19 @@
                 "vt": "str"
             }
         ],
-        "repeat": "6",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "89",
-        "payloadType": "num",
-        "x": 210,
-        "y": 940,
+        "payload": "[{\"_value\": 4500}, {\"_value\": 4600}]",
+        "payloadType": "json",
+        "x": 140,
+        "y": 1040,
         "wires": [
             [
-                "479255cacf4380be"
+                "479255cacf4380be",
+                "20d84b85bc3f8d6a"
             ]
         ]
     },
@@ -687,8 +671,8 @@
         "correl": "",
         "expiry": "",
         "broker": "a928ba0.2d1f748",
-        "x": 520,
-        "y": 940,
+        "x": 320,
+        "y": 1080,
         "wires": []
     },
     {
@@ -705,7 +689,7 @@
         "correl": "",
         "expiry": "",
         "broker": "a928ba0.2d1f748",
-        "x": 570,
+        "x": 490,
         "y": 100,
         "wires": []
     },
@@ -723,8 +707,8 @@
         "correl": "",
         "expiry": "",
         "broker": "a928ba0.2d1f748",
-        "x": 540,
-        "y": 220,
+        "x": 500,
+        "y": 240,
         "wires": []
     },
     {
@@ -741,8 +725,8 @@
         "correl": "",
         "expiry": "",
         "broker": "a928ba0.2d1f748",
-        "x": 540,
-        "y": 340,
+        "x": 500,
+        "y": 380,
         "wires": []
     },
     {
@@ -777,8 +761,8 @@
         "correl": "",
         "expiry": "",
         "broker": "a928ba0.2d1f748",
-        "x": 470,
-        "y": 680,
+        "x": 510,
+        "y": 660,
         "wires": []
     },
     {
@@ -795,8 +779,157 @@
         "correl": "",
         "expiry": "",
         "broker": "a928ba0.2d1f748",
-        "x": 470,
+        "x": 510,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "d148acebe67d37ab",
+        "type": "influxdb in",
+        "z": "4db9e93a234f8a01",
+        "influxdb": "6ddbd751be509e35",
+        "name": "Last hour energy consumption",
+        "query": "from(bucket: \"Iot-project\")\n  |> range(start: -1m)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"mqtt_consumer\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"host\"] == \"iot-app-container\")\n  |> filter(fn: (r) => r[\"topic\"] == \"/energy\")\n  |> aggregateWindow(every: 1m, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "Iot-23-24",
+        "x": 170,
+        "y": 900,
+        "wires": [
+            [
+                "10055e607531e08a",
+                "20d84b85bc3f8d6a"
+            ]
+        ]
+    },
+    {
+        "id": "10055e607531e08a",
+        "type": "debug",
+        "z": "4db9e93a234f8a01",
+        "name": "debug 32",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "627b060f748654ad",
+        "type": "inject",
+        "z": "4db9e93a234f8a01",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
         "y": 840,
+        "wires": [
+            [
+                "d148acebe67d37ab"
+            ]
+        ]
+    },
+    {
+        "id": "20d84b85bc3f8d6a",
+        "type": "function",
+        "z": "4db9e93a234f8a01",
+        "name": "convert to ints",
+        "func": "let min = Math.round(msg.payload[0]._value);\nlet max = Math.round(msg.payload[1]._value);\nlet diff = max - min;\nlet payload = {\"min\": min, \"diff\": diff};\nlet msg2 = {\"payload\": payload};\nmsg = msg2;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 940,
+        "wires": [
+            [
+                "7bf2e6be7350b489",
+                "a422718f3e962b61"
+            ]
+        ]
+    },
+    {
+        "id": "7bf2e6be7350b489",
+        "type": "debug",
+        "z": "4db9e93a234f8a01",
+        "name": "debug 33",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "48c92e46fe60d816",
+        "type": "function",
+        "z": "4db9e93a234f8a01",
+        "name": "Format payload",
+        "func": "let topic = \"Hourly energy report from Node-RED\";\nlet body = msg.payload;\nmsg.topic = topic;\nmsg.payload = body;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 1040,
+        "wires": [
+            [
+                "8e7db5525cdf6fd3"
+            ]
+        ]
+    },
+    {
+        "id": "a422718f3e962b61",
+        "type": "template",
+        "z": "4db9e93a234f8a01",
+        "name": "Email template",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Hello!\nThis is your hourly energy consumption report.\n\n<ul>\n    <li>Total energy consumed thus far: {{payload.min}} kWh</li>\n    <li>Energy consumed in the last hour: {{payload.diff}} kWh</li>\n</ul>",
+        "output": "str",
+        "x": 600,
+        "y": 980,
+        "wires": [
+            [
+                "48c92e46fe60d816",
+                "7bf2e6be7350b489"
+            ]
+        ]
+    },
+    {
+        "id": "8e7db5525cdf6fd3",
+        "type": "e-mail",
+        "z": "4db9e93a234f8a01",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": false,
+        "name": "dario.dercole@student.univaq.it",
+        "dname": "",
+        "x": 990,
+        "y": 960,
         "wires": []
     }
 ]
