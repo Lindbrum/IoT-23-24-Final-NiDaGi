@@ -648,8 +648,8 @@
         "topic": "",
         "payload": "[{\"_value\": 4500}, {\"_value\": 4600}]",
         "payloadType": "json",
-        "x": 240,
-        "y": 1100,
+        "x": 140,
+        "y": 1040,
         "wires": [
             [
                 "479255cacf4380be",
@@ -671,8 +671,8 @@
         "correl": "",
         "expiry": "",
         "broker": "a928ba0.2d1f748",
-        "x": 520,
-        "y": 1100,
+        "x": 320,
+        "y": 1080,
         "wires": []
     },
     {
@@ -794,8 +794,8 @@
         "precision": "",
         "retentionPolicy": "",
         "org": "Iot-23-24",
-        "x": 270,
-        "y": 940,
+        "x": 170,
+        "y": 900,
         "wires": [
             [
                 "10055e607531e08a",
@@ -808,16 +808,17 @@
         "type": "debug",
         "z": "4db9e93a234f8a01",
         "name": "debug 32",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 860,
-        "wires": []
+        "x": 375,
+        "y": 880,
+        "wires": [],
+        "l": false
     },
     {
         "id": "627b060f748654ad",
@@ -850,8 +851,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 520,
-        "y": 960,
+        "x": 420,
+        "y": 940,
         "wires": [
             [
                 "7bf2e6be7350b489",
@@ -871,9 +872,10 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
-        "y": 940,
-        "wires": []
+        "x": 715,
+        "y": 900,
+        "wires": [],
+        "l": false
     },
     {
         "id": "48c92e46fe60d816",
@@ -887,8 +889,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 1000,
+        "x": 760,
+        "y": 1040,
         "wires": [
             [
                 "8e7db5525cdf6fd3"
@@ -906,7 +908,7 @@
         "syntax": "mustache",
         "template": "Hello!\nThis is your hourly energy consumption report.\n\n<ul>\n    <li>Total energy consumed thus far: {{payload.min}} kWh</li>\n    <li>Energy consumed in the last hour: {{payload.diff}} kWh</li>\n</ul>",
         "output": "str",
-        "x": 780,
+        "x": 600,
         "y": 980,
         "wires": [
             [
@@ -928,8 +930,8 @@
         "tls": false,
         "name": "dario.dercole@student.univaq.it",
         "dname": "",
-        "x": 1230,
-        "y": 1100,
+        "x": 990,
+        "y": 960,
         "wires": []
     }
 ]
