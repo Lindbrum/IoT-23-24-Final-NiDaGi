@@ -815,9 +815,16 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
+<<<<<<< HEAD
         "x": 420,
         "y": 880,
         "wires": []
+=======
+        "x": 375,
+        "y": 880,
+        "wires": [],
+        "l": false
+>>>>>>> 1127bc746c93919a2f3ed8e4e2263c56ef22a3db
     },
     {
         "id": "627b060f748654ad",
@@ -871,9 +878,16 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
+<<<<<<< HEAD
         "x": 760,
         "y": 900,
         "wires": []
+=======
+        "x": 715,
+        "y": 900,
+        "wires": [],
+        "l": false
+>>>>>>> 1127bc746c93919a2f3ed8e4e2263c56ef22a3db
     },
     {
         "id": "48c92e46fe60d816",
